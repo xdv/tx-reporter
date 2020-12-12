@@ -1,10 +1,10 @@
-# Ripple Transaction Reporter
+# Divvy Transaction Reporter
 
-Reports Ripple ledger transactions to Slack
+Reports Divvy ledger transactions to Slack
 
 ## Usage
 
 ````
 npm install
-RIPPLED_URI=wss://s1.ripple.com:51233 WEBHOOK_URI=<your-slack-webhook-uri> npm start
+DIVVYD_URI=wss://one.vld.xdv.io:51255 WEBHOOK_URI=<your-slack-webhook-uri> npm start
 ````

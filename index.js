@@ -4,7 +4,7 @@ const WebSocket = require('ws');
 var Slack = require('slack-node');
  
 const webhookUri = process.env['WEBHOOK_URI']
-const rippledUri = process.env['RIPPLED_URI']
+const divvydUri = process.env['DIVVYD_URI']
 
 var slack = new Slack();
 slack.setWebhook(webhookUri);
@@ -82,13 +82,13 @@ function subscribe(ip) {
   });
 }
 
-subscribe(rippledUri);
+subscribe(divvydUri);
 
 const interval = setInterval(function ping() {
   if (ws.isAlive === false) {
     console.log('reconnect')
     ws.terminate();
-    subscribe(rippledUri);
+    subscribe(divvydUri);
   }
 
   ws.isAlive = false;
